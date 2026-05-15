@@ -1,1 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-press: "PressStart2P";
+  --font-inter: "Inter";
+  --font-inter-default-weight: 410;
+  --font-inter-heading-weight: 715;
+}
