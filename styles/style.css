@@ -17,4 +17,36 @@
   font-variation-settings:
     "wght" var(--font-inter-default-weight, 410),
     "slnt" var(--font-inter-default-slant, 0);
+  background-image: var(--background);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.page-block {
+  margin: 100px auto 98px;
+  width: clamp(var(--page-block-min-width), 100%, var(--page-block-max-width));
+  background: var(--page-block-background);
+  border: 2px solid #000;
+}
+
+.header {
+  text-align: center;
+  text-transform: uppercase;
+  padding: clamp(122px, 119.18px + 0.75vw, 130px)
+    clamp(16px, -21.5px + 10vw, 122.5px);
+}
+
+.header__logo-group {
+  font-family: var(--font-press);
+  font-weight: 400;
+}
+
+.header__logo {
+  display: inline-block;
+  margin-block-end: 20px;
+  font-size: clamp(49px, 43.37px + 1.5vw, 65px);
+}
+
+.header__title {
+  font-size: clamp(14px, 10.83px + 0.85vw, 23px);
 }
