@@ -35,6 +35,35 @@
   line-height: 90%;
   min-inline-size: 130px;
   cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  color: var(--color-white);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-black);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.5s ease-in-out;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--color-black);
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button span {
+  color: currentColor;
+  mix-blend-mode: difference;
 }
 
 .watermark {
@@ -48,6 +77,34 @@
   opacity: 0.5;
   mix-blend-mode: hard-light;
   text-shadow: var(--watermark-text-shadow);
+}
+
+.filter-sepia {
+  filter: sepia(0.8);
+}
+
+.filter-saturate {
+  filter: saturate(2);
+}
+
+.filter-opacity {
+  filter: opacity(0.5);
+}
+
+.filter-invert {
+  filter: invert(1);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(150deg);
+}
+
+.filter-blur {
+  filter: blur(5px);
+}
+
+.filter-custom {
+  filter: brightness(80%) contrast(135%) grayscale(30%) sepia(10%);
 }
 
 .page-block {
@@ -152,10 +209,47 @@
 .section__button-icon {
   flex-shrink: 0;
   max-block-size: 21px;
+  mix-blend-mode: difference;
 }
 
 .section__button-text {
   padding-inline-start: 8px;
+}
+
+.dialog__window[open] {
+  display: block;
+  padding: 30px;
+  border: var(--page-block-border);
+  max-inline-size: clamp(341px, 336.77px + 1.13vw, 353px);
+}
+
+.dialog__window[open]::backdrop {
+  background-color: var(--color-black);
+  opacity: 0.75;
+}
+
+.dialog__window-content {
+  display: flex;
+  margin-block-end: 30px;
+}
+
+.dialog__window-content-icon {
+  flex-shrink: 0;
+  inline-size: 39px;
+  block-size: 39px;
+  margin-inline-end: 20px;
+}
+
+.dialog__window-content-text {
+  font-family: var(--font-press);
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+.dialog__window-button {
+  inline-size: 100%;
+  text-transform: uppercase;
 }
 
 @supports ((text-stroke: var(--watermark-text-stroke)) or (-webkit-text-stroke: var(--watermark-text-stroke))) {
@@ -179,5 +273,9 @@
   .section__button-text {
     padding-inline-start: 0;
     padding-block-start: 8px;
+  }
+
+  .dialog__window[open] {
+    padding-inline: 40px;
   }
 }
