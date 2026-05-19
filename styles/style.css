@@ -12,32 +12,32 @@
 
 .page {
   padding-block: 100px;
+  font-family: var(--font-inter), sans-serif;
+  background-image: var(--background);
+  background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font-inter), sans-serif;
   font-variation-settings:
     "wght" var(--font-inter-default-weight, 410),
     "slnt" var(--font-inter-default-slant, 0);
-  background-image: var(--background);
-  background-attachment: fixed;
-  background-size: cover;
 }
 
 .button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10.5px 35px;
-  background: var(--color-white);
-  border: var(--page-block-border);
-  font-size: 14px;
-  font-family: var(--font-press);
-  line-height: 90%;
-  min-inline-size: 130px;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--page-block-border);
+  padding: 10.5px 35px;
   color: var(--color-white);
+  font-family: var(--font-press);
+  font-size: 14px;
+  line-height: 90%;
+  background: var(--color-white);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  min-inline-size: 130px;
 }
 
 .button::before {
@@ -45,16 +45,16 @@
   position: absolute;
   inset: 0;
   background: var(--color-black);
+  transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.5s ease-in-out;
   block-size: 100%;
   inline-size: 100%;
 }
 
 .button:focus {
-  outline: none;
   box-shadow: 2px 2px 0 var(--color-black);
+  outline: none;
 }
 
 .button:hover::before {
@@ -68,15 +68,15 @@
 
 .watermark {
   position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
   font-family: var(--font-press);
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
-  top: 25px;
-  right: 25px;
-  opacity: 0.5;
-  mix-blend-mode: hard-light;
   text-shadow: var(--watermark-text-shadow);
+  mix-blend-mode: hard-light;
 }
 
 .filter-sepia {
@@ -108,17 +108,17 @@
 }
 
 .page-block {
-  margin-inline: auto;
   width: clamp(var(--page-block-min-width), 100%, var(--page-block-max-width));
-  background: var(--page-block-background);
+  margin-inline: auto;
   border: var(--page-block-border);
+  background: var(--page-block-background);
 }
 
 .header {
   margin-block-end: 100px;
+  padding: clamp(120px, 116.48px + 0.94vw, 130px) clamp(16px, -21.5px + 10vw, 122.5px);
   text-align: center;
   text-transform: uppercase;
-  padding: clamp(120px, 116.48px + 0.94vw, 130px) clamp(16px, -21.5px + 10vw, 122.5px);
 }
 
 .header__logo-group {
@@ -142,9 +142,9 @@
 }
 
 .card__header {
+  border-block-end: var(--page-block-border);
   padding-inline: 10px;
   padding-block: 4px;
-  border-block-end: var(--page-block-border);
 }
 
 .card__header-title {
@@ -157,8 +157,8 @@
 .card__image-box {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: clamp(371px, 256.56px + 30.52vw, 696px);
   overflow: hidden;
 }
@@ -169,8 +169,8 @@
 }
 
 .card__content {
-  padding: var(--card-padding);
   border-block-start: var(--page-block-border);
+  padding: var(--card-padding);
 }
 
 .card__content p {
@@ -183,17 +183,17 @@
 
 .card__footer {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
   padding-inline: var(--card-padding);
   padding-block-end: var(--card-padding);
 }
 
 .card__icon-button {
-  padding: 0;
   margin-inline-end: 12px;
-  background: none;
   border: 0;
+  padding: 0;
+  background: none;
 }
 
 .section__button {
@@ -218,14 +218,14 @@
 
 .dialog__window[open] {
   display: block;
-  padding: 30px;
   border: var(--page-block-border);
+  padding: 30px;
   max-inline-size: clamp(341px, 336.77px + 1.13vw, 353px);
 }
 
 .dialog__window[open]::backdrop {
-  background-color: var(--color-black);
   opacity: 0.75;
+  background-color: var(--color-black);
 }
 
 .dialog__window-content {
@@ -235,9 +235,9 @@
 
 .dialog__window-content-icon {
   flex-shrink: 0;
+  margin-inline-end: 20px;
   inline-size: 39px;
   block-size: 39px;
-  margin-inline-end: 20px;
 }
 
 .dialog__window-content-text {
@@ -248,15 +248,15 @@
 }
 
 .dialog__window-button {
-  inline-size: 100%;
   text-transform: uppercase;
+  inline-size: 100%;
 }
 
 @supports ((text-stroke: var(--watermark-text-stroke)) or (-webkit-text-stroke: var(--watermark-text-stroke))) {
   .watermark {
+    text-shadow: none;
     -webkit-text-stroke: var(--watermark-text-stroke);
     text-stroke: var(--watermark-text-stroke);
-    text-shadow: none;
   }
 }
 
