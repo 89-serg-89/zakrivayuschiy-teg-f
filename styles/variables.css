@@ -11,20 +11,8 @@
 
   --background-color-line: #d3d3d3;
   --background:
-    repeating-linear-gradient(
-      to right,
-      var(--background-color-line) 0,
-      var(--background-color-line) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      var(--background-color-line) 0,
-      var(--background-color-line) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
+    repeating-linear-gradient(to right, var(--background-color-line) 0, var(--background-color-line) 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(to bottom, var(--background-color-line) 0, var(--background-color-line) 2px, transparent 2px, transparent 4px),
     linear-gradient(to bottom, #e7e7e7, #1a1a1a);
 
   --page-block-min-width: 375px;
@@ -33,4 +21,7 @@
   --page-block-border: 2px solid var(--color-black);
 
   --card-padding: 25px;
+
+  --watermark-text-stroke: 1px var(--color-white);
+  --watermark-text-shadow: -1px 0 var(--color-white), 0 1px var(--color-white), 1px 0 var(--color-white), 0 -1px var(--color-white);
 }

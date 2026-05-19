@@ -11,6 +11,7 @@
 */
 
 .page {
+  padding-block: 100px;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-inter), sans-serif;
@@ -23,14 +24,30 @@
 }
 
 .button {
-  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10.5px 35px;
+  background: var(--color-white);
   border: var(--page-block-border);
   font-size: 14px;
   font-family: var(--font-press);
   line-height: 90%;
   min-inline-size: 130px;
-  block-size: 38px;
   cursor: pointer;
+}
+
+.watermark {
+  position: absolute;
+  font-family: var(--font-press);
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  top: 25px;
+  right: 25px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: var(--watermark-text-shadow);
 }
 
 .page-block {
@@ -41,12 +58,10 @@
 }
 
 .header {
-  margin-block-start: 100px;
-  margin-block-end: 96px;
+  margin-block-end: 100px;
   text-align: center;
   text-transform: uppercase;
-  padding: clamp(122px, 119.18px + 0.75vw, 130px)
-    clamp(16px, -21.5px + 10vw, 122.5px);
+  padding: clamp(120px, 116.48px + 0.94vw, 130px) clamp(16px, -21.5px + 10vw, 122.5px);
 }
 
 .header__logo-group {
@@ -58,10 +73,15 @@
   display: inline-block;
   margin-block-end: 20px;
   font-size: clamp(49px, 43.37px + 1.5vw, 65px);
+  text-transform: uppercase;
 }
 
 .header__title {
   font-size: clamp(14px, 10.83px + 0.85vw, 23px);
+}
+
+.card__item {
+  margin-block-end: 50px;
 }
 
 .card__header {
@@ -78,21 +98,26 @@
 }
 
 .card__image-box {
-  border-block-end: var(--page-block-border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(371px, 256.56px + 30.52vw, 696px);
+  overflow: hidden;
 }
 
 .card__image-box img {
   display: block;
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 100%;
 }
 
 .card__content {
   padding: var(--card-padding);
+  border-block-start: var(--page-block-border);
 }
 
 .card__content p {
-  line-height: 1.315rem;
+  line-height: 21px;
 }
 
 .card__content p:not(:last-child) {
@@ -112,4 +137,47 @@
   margin-inline-end: 12px;
   background: none;
   border: 0;
+}
+
+.section__button {
+  display: flex;
+  justify-content: center;
+}
+
+.section__button .button {
+  padding: 15px 18px;
+  min-inline-size: 335px;
+}
+
+.section__button-icon {
+  flex-shrink: 0;
+  max-block-size: 21px;
+}
+
+.section__button-text {
+  padding-inline-start: 8px;
+}
+
+@supports ((text-stroke: var(--watermark-text-stroke)) or (-webkit-text-stroke: var(--watermark-text-stroke))) {
+  .watermark {
+    -webkit-text-stroke: var(--watermark-text-stroke);
+    text-stroke: var(--watermark-text-stroke);
+    text-shadow: none;
+  }
+}
+
+@media (max-width: 375.99px) {
+  .section__button .button {
+    flex-direction: column;
+    min-inline-size: auto;
+  }
+
+  .section__button-icon {
+    max-block-size: 28px;
+  }
+
+  .section__button-text {
+    padding-inline-start: 0;
+    padding-block-start: 8px;
+  }
 }
