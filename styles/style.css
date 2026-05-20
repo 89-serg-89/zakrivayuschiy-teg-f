@@ -29,7 +29,7 @@
   justify-content: center;
   align-items: center;
   border: var(--page-block-border);
-  padding: 10.5px 35px;
+  padding: 10.5px 15px;
   color: var(--color-white);
   font-family: var(--font-press);
   font-size: 14px;
@@ -184,16 +184,32 @@
 .card__footer {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   padding-inline: var(--card-padding);
   padding-block-end: var(--card-padding);
 }
 
 .card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-inline-end: 12px;
-  border: 0;
+  min-inline-size: 38px;
   padding: 0;
   background: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+}
+
+.card__icon-button:focus,
+.card__icon-button:focus-visible {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--color-black);
 }
 
 .section__button {
