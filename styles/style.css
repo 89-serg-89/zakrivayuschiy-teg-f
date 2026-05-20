@@ -190,17 +190,17 @@
 
 .card__icon-button {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin-inline-end: 12px;
-  min-inline-size: 38px;
-  padding: 0;
-  background: none;
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
   border-radius: 0;
+  padding: 0;
+  background: none;
   transition: border-color 0.3s ease;
+  min-inline-size: 38px;
 }
 
 .card__icon-button:focus,
