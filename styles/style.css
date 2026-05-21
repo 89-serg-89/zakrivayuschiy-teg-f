@@ -31,7 +31,7 @@
   border: var(--page-block-border);
   padding: 10.5px 15px;
   color: var(--color-white);
-  font-family: var(--font-press);
+  font-family: var(--font-press), fantasy;
   font-size: 14px;
   line-height: 90%;
   background: var(--color-white);
@@ -71,7 +71,7 @@
   top: 25px;
   right: 25px;
   opacity: 0.5;
-  font-family: var(--font-press);
+  font-family: var(--font-press), fantasy;
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
@@ -115,14 +115,14 @@
 }
 
 .header {
-  margin-block-end: 100px;
+  margin-block-end: 94px;
   padding: clamp(120px, 116.48px + 0.94vw, 130px) clamp(16px, -21.5px + 10vw, 122.5px);
   text-align: center;
   text-transform: uppercase;
 }
 
 .header__logo-group {
-  font-family: var(--font-press);
+  font-family: var(--font-press), fantasy;
   font-weight: 400;
 }
 
@@ -166,6 +166,8 @@
 .card__image-box img {
   display: block;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__content {
@@ -192,7 +194,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-inline-end: 12px;
+  margin-inline-end: 4px;
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
@@ -246,6 +248,7 @@
 
 .dialog__window-content {
   display: flex;
+  align-items: center;
   margin-block-end: 30px;
 }
 
@@ -257,7 +260,7 @@
 }
 
 .dialog__window-content-text {
-  font-family: var(--font-press);
+  font-family: var(--font-press), fantasy;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
@@ -277,6 +280,10 @@
 }
 
 @media (max-width: 375.99px) {
+  .header {
+    margin-block-end: 100px;
+  }
+
   .section__button .button {
     flex-direction: column;
     min-inline-size: auto;
